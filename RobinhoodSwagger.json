@@ -1,0 +1,121 @@
+{
+  "swagger": "2.0",
+  "host": "api.robinhood.com",
+  "schemes": [
+    "https"
+  ],
+  "info": {
+    "description": "API to interact with Robinhood",
+    "title": "Robinhood API",
+    "version": "unknown",
+    "termsOfService": "TBD",
+    "contact": {
+      "name": "DavlinLotze",
+      "url": "https://github.com/DavlinLotze/",
+      "email": "DavlinLotze@users.noreply.github.com"
+    },
+    "license": {
+      "name": "GNU GENERAL PUBLIC LICENSE",
+      "url": "https://github.com/DavlinLotze/RobinhoodSwagger/blob/master/LICENSE"
+    }
+  },
+  "basePath": "/",
+  "paths": {
+    "/fundamentals/{symbol}/": {
+      "get": {
+        "description": "API Method Description",
+        "summary": "Short Summary of API Method",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://github.com/DavlinLotze/RobinhoodSwagger"
+        },
+        "operationId": "uniqueId",
+        "tags": [
+          "api2swagger"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "open": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "high": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "low": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "volume": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "average_volume": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "high_52_weeks": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "dividend_yield": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "low_52_weeks": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "market_cap": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "pe_ratio": {},
+                "description": {
+                  "type": "string",
+                  "minLength": 1
+                },
+                "instrument": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "open",
+                "high",
+                "low",
+                "volume",
+                "average_volume",
+                "high_52_weeks",
+                "dividend_yield",
+                "low_52_weeks",
+                "market_cap",
+                "description",
+                "instrument"
+              ]
+            }
+          }
+        },
+        "security": [],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "symbol",
+            "description": "stock symbol",
+            "required": true,
+            "type": "string"
+          }
+        ]
+      }
+    }
+  }
+}
