@@ -31,7 +31,7 @@
         },
         "operationId": "uniqueId",
         "tags": [
-          "api2swagger"
+          "symbol"
         ],
         "produces": [
           "application/json"
@@ -115,6 +115,139 @@
             "type": "string"
           }
         ]
+      }
+    },
+    "/user/basic_info/": {
+      "get": {
+        "description": "Retrieve basic user info, needs authorization",
+        "summary": "Retrieve basic info",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://github.com/DavlinLotze/RobinhoodSwagger"
+        },
+        "operationId": "symbol",
+        "tags": [
+          "api2swagger"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "401": {
+            "description": "Unauthorized",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "detail": {
+                  "type": "string",
+                  "minLength": 1
+                }
+              },
+              "required": [
+                "detail"
+              ]
+            }
+          }
+        },
+        "security": [],
+        "parameters": []
+      }
+    },
+    "/markets/": {
+      "get": {
+        "description": "Returns information on markets",
+        "summary": "Market information",
+        "externalDocs": {
+          "description": "Find out more",
+          "url": "https://github.com/DavlinLotze/RobinhoodSwagger"
+        },
+        "operationId": "market",
+        "tags": [
+          "market"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "description": "",
+              "type": "object",
+              "properties": {
+                "previous": {},
+                "results": {
+                  "type": "array",
+                  "uniqueItems": true,
+                  "minItems": 1,
+                  "items": {
+                    "required": [
+                      "website",
+                      "city",
+                      "name",
+                      "url",
+                      "country",
+                      "todays_hours",
+                      "operating_mic",
+                      "acronym",
+                      "timezone",
+                      "mic"
+                    ],
+                    "properties": {
+                      "website": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "city": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "name": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "url": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "country": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "todays_hours": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "operating_mic": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "acronym": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "timezone": {
+                        "type": "string",
+                        "minLength": 1
+                      },
+                      "mic": {
+                        "type": "string",
+                        "minLength": 1
+                      }
+                    }
+                  }
+                },
+                "next": {}
+              },
+              "required": [
+                "results"
+              ]
+            }
+          }
+        },
+        "security": [],
+        "parameters": []
       }
     }
   }
